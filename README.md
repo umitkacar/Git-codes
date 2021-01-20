@@ -64,7 +64,7 @@ git status
 
 git checkout .
 
-git status
+git merge dev
 
 
 
