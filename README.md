@@ -70,8 +70,25 @@ git checkout .
 
 git merge dev
 
+## UPDATE
 
+git branch
 
+git checkout dev
+
+git pull
+
+git checkout -
+
+git merge dev
+
+git status
+
+git add cv_api/
+
+git commit
+
+git push
 
 
 
