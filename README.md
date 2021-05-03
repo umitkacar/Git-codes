@@ -90,6 +90,8 @@ git status
 
 git add cv_api/
 
+git rm --cached [filenames] # NO TRACK
+
 git commit
 
 git push
