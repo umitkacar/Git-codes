@@ -62,6 +62,8 @@ git log --oneline
 
 git log 'commit id'
 
+git log -p
+
 CTRL + Z
 
 ## RESET
