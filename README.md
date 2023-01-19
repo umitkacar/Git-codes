@@ -1,5 +1,18 @@
 ## GIT LEARNING
 
+## GIT CONFIG
+
+git config user.name
+git config user.email
+
+git config user.name  "xxx"
+git config user.email "yyy@gmail.com"
+
+git config user.name  "xxx"
+
+git config --global user.name  "xxx"
+git config --global user.email "yyy@gmail.com"
+
 https://git-scm.com/docs/gittutorial
 
 https://learngitbranching.js.org/
