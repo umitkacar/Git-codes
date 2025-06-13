@@ -1,122 +1,115 @@
-## GIT LEARNING
+# Git Komut Kitapçığı
 
-## GIT CONFIG
+Bu döküman Git ile çalışırken en sık kullanılan komutların kısa bir özetini sunar. 
+Git deposu oluşturma, değişiklikleri takip etme, dallar (branch) yönetimi ve uzaktaki (remote) depolarla çalışma gibi temel işlemleri içerir.
 
-git config user.name
-git config user.email
+## 1. Kurulum ve Konfigürasyon
+```bash
+# Kullanıcı bilgilerini tanımla
+git config --global user.name "Ad Soyad"
+git config --global user.email "email@example.com"
 
-git config user.name  "xxx"
-git config user.email "yyy@gmail.com"
+# Mevcut ayarları görüntüle
+git config --list
+```
 
-git config user.name  "xxx"
+## 2. Depo Oluşturma ve Klonlama
+```bash
+# Yeni bir depo başlat
+git init
 
-git config --global user.name  "xxx"
-git config --global user.email "yyy@gmail.com"
+# Varolan bir depoyu klonla
+git clone <repo-adresi>
+```
 
-https://git-scm.com/docs/gittutorial
-
-https://learngitbranching.js.org/
-
-https://ohmyz.sh/
-
-$ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-## DEV UPDATE
-git checkout dev
-
-git pull origin dev 
-
-----> user-password
-
-user = .....
-
-password = .....
-
-e-mail= .....
-
-## MAKE A BRANCH
-
-git branch document_spoofing_threshold_update
-
-git checkout document_spoofing_threshold_update
-
-git branch
-
-### DO CHANGEABLES
-### CHECK
-git status 
-
-git add cv_api/
-
+## 3. Değişiklik Takibi
+```bash
+# Çalışma dizinindeki durumu kontrol et
 git status
 
-git commit -m 'threshold_update'
+# Dosyaları sahneye ekle
+git add <dosya>
+# veya tüm değişiklikleri eklemek için
+git add .
 
-git push origin document_spoofing_threshold_update
+# Değişiklikleri kaydet (commit)
+git commit -m "Açıklama"
+```
 
-## GO TO PAGES
+## 4. Dal (Branch) İşlemleri
+```bash
+# Yeni dal oluştur
+git branch <yeni_dal>
 
-DO PULL REQUEST to DEV - ABSOLUTELY DEV
+# Dal değiştirme
+git checkout <dal>
 
-DON'T FORGET DEV !!!! not master
-### dev - branch merge -  ABSOLUTELY NO
+# Dal oluşturup aynı anda geçiş yapma
+git checkout -b <yeni_dal>
 
-git diff dev..master
+# Değişiklikleri başka dala birleştirme
+git merge <dal>
 
-git diff face_liveness_big_model..dev
+# Dal silme
+git branch -d <dal>
+# Zorla silmek için
+git branch -D <dal>
+```
 
-### branch delete .....
+## 5. Uzak Depo (Remote) İşlemleri
+```bash
+# Uzak depo ekleme
+git remote add origin <url>
 
-git branch -d document-spoofing
+# Uzak depodaki değişiklikleri çekme
+git pull origin <dal>
 
-git branch -D face_liveness_robust
+# Değişiklikleri göndermek
+git push origin <dal>
 
-git log --pretty=oneline
+# Uzak depoları listeleme
+git remote -v
+```
 
+## 6. Değişiklikleri İnceleme
+```bash
+# Commit geçmişini göster
+git log
+# Tek satırlık özet
 git log --oneline
+# İki dal arasındaki farkları gör
+git diff <dal1>..<dal2>
+# Belirli bir commit'i detaylı göster
+git show <commit>
+```
 
-git log 'commit id'
-
-git log -p
-
-CTRL + Z
-
-## RESET
-
-git reset
-
-git status
-
+## 7. Geri Alma ve Temizleme
+```bash
+# Çalışma dizinindeki değişiklikleri geri al
 git checkout .
 
-git merge dev
+# Belirli bir commit'e dön
+git reset --hard <commit>
 
-## UPDATE
+# Stash ile geçici olarak sakla
+git stash
+# Saklanan değişiklikleri geri getir
+git stash pop
+```
 
-git branch
+## 8. Faydalı Diğer Komutlar
+```bash
+# Takipten çıkar
+git rm --cached <dosya>
 
-git checkout dev
+# Tag ekleme
+git tag <etiket>
 
-git pull
+# Daha okunabilir log çıktısı
+git log --graph --oneline --decorate
+```
 
-git checkout -
-
-git merge dev
-
-git status
-
-git add cv_api/
-
-git rm --cached [filenames] # NO TRACK
-
-git commit
-
-git push
-
-
-
-
-
-
-
-
+## 9. Kaynaklar
+- [Git resmi dokümantasyonu](https://git-scm.com/docs/gittutorial)
+- [Learn Git Branching](https://learngitbranching.js.org/)
+- [Oh My Zsh](https://ohmyz.sh/)
